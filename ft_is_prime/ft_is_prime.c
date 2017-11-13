@@ -14,22 +14,16 @@
 
 int ft_is_prime(int nb)
 {
-    int i;
-    int tempnum;
+    int i = 2;
     
-    i = 3;
-    tempnum = nb / 2;
-    if (nb == 0 || nb == 1 || nb < 0)
-        return (0);
-    if (nb == 2 || nb == 3)
-        return (1);
-    while (i <= tempnum)
-    {
-        if (nb % i == 0)
-            return(0);
-        i += 2;
+    if(nb < 2)
+        return 0;
+    while(i < nb) {
+        if(nb % i == 0)
+            return 0;
+        i++;
     }
-    return (1);
+    return 1;
 }
 
 int main(void)
@@ -39,4 +33,5 @@ int main(void)
     printf("%d", ft_is_prime(1));
     printf("%d", ft_is_prime(2));
     printf("%d", ft_is_prime(3));
+    printf("%d", ft_is_prime(4));
 }
